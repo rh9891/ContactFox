@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 // POST route with "api/auth" endpoint that authorizes the user and gets the token. Public access.
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
     res.send("Log in user.");
 });
 
