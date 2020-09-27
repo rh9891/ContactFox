@@ -1,7 +1,11 @@
 // Bring in modules.
 const express = require("express");
+const connectDB = require("./config/db");
 
 const app = express();
+
+// Database connection.
+connectDB();
 
 app.get("/", (req, res) => res.json({ msg: "Welcome to the Contact Keeper API!" }));
 
