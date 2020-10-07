@@ -1,6 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const auth = require("../middleware/auth");
 const { check, validationResult } = require("express-validator");
 
 // Brings in the User model, so that it can be used in the routes.
@@ -11,8 +12,15 @@ const express = require("express");
 const router = express.Router();
 
 // GET route with "api/auth" endpoint that gets the logged in user. Private access.
-router.get("/", (req, res) => {
-  res.send("Get logged in user.");
+router.get("/", auth, async (req, res) => {
+  // Passed in auth as a second parameter in order to make it a protected route.
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server error.");
+  }
 });
 
 // POST route with "api/auth" endpoint that authorizes the user and gets the token. Public access.
