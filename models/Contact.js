@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 const ContactSchema = mongoose.Schema({
+  // The user is now part of the schema as each user has their own set of contacts.
   user: {
     type: mongoose.Schema.Types.ObjectId,
+    // Refers to the users collection.
     ref: "users",
   },
   name: {
