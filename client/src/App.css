@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Rubik");
 
 /* Global Styles */
 :root {
-  --primary-color: #003699;
+  --primary-color: #6f0801;
   --dark-color: #333333;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --danger-color: #d99058;
+  --success-color: #568203;
 }
 
 * {
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
