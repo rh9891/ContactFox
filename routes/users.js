@@ -30,8 +30,9 @@ router.post(
     const { name, email, password } = req.body;
 
     try {
+      // Checks to see if there is a user.
       let user = await User.findOne({ email });
-
+      // Returns an error if the user is already registered.
       if (user) {
         return res.status(400).json({
           msg: "User already exists. Please choose another email address.",
@@ -45,23 +46,24 @@ router.post(
       });
 
       const salt = await bcrypt.genSalt(10);
-
+      // Hashes the user's password.
       user.password = await bcrypt.hash(password, salt);
-
+      // Saves the user in the database.
       await user.save();
-
+      // Creates the payload.
       const payload = {
         user: {
           id: user.id,
         },
       };
-
+      // Signs the token.
       jwt.sign(
         payload,
         config.get("jwtSecret"),
         {
           expiresIn: 3600,
         },
+        // Responds with the token.
         (err, token) => {
           if (err) throw err;
           res.json({ token });
