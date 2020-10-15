@@ -96,7 +96,7 @@ const AuthState = (props) => {
 
   // Function to log out user. (Will destroy the user's token and clear any logged in user.)
   const logout = () => {
-    console.log("logout");
+    dispatch({ type: LOGOUT });
   };
 
   // Function to clear errors. (Will clear out any errors in the state.)
