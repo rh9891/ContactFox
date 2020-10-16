@@ -4,7 +4,7 @@ import ContactContext from "../../context/contact/contactContext";
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
 
-  const { addContact, current, clearCurrent, updateCurrent } = contactContext;
+  const { addContact, current, clearCurrent, updateContact } = contactContext;
 
   // Note: useEffect mimics the life cycle method of componentDidMount.
   useEffect(() => {
@@ -41,7 +41,7 @@ const ContactForm = () => {
     if (current === null) {
       addContact(contact);
     } else {
-      updateCurrent(contact);
+      updateContact(contact);
     }
     setContact({
       name: "",

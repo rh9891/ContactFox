@@ -82,6 +82,33 @@ const ContactState = (props) => {
     }
   };
 
+  // Function to update the current contact.
+  const updateContact = async (contact) => {
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    try {
+      const res = await axios.put(
+        `/api/contacts/${contact._id}`,
+        contact,
+        config
+      );
+
+      dispatch({
+        type: UPDATE_CONTACT,
+        payload: res.data,
+      });
+    } catch (err) {
+      dispatch({
+        type: CONTACT_ERROR,
+        payload: err.response.msg,
+      });
+    }
+  };
+
   // Function to clear all contacts from the
   const clearContacts = () => {
     dispatch({ type: CLEAR_CONTACTS });
@@ -95,11 +122,6 @@ const ContactState = (props) => {
   // Function the clear the current contact.
   const clearCurrent = () => {
     dispatch({ type: CLEAR_CURRENT });
-  };
-
-  // Function to update the current contact.
-  const updateContact = (contact) => {
-    dispatch({ type: UPDATE_CONTACT, payload: contact });
   };
 
   // Function to filter contacts (based on what is inputted in search field).
