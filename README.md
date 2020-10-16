@@ -33,18 +33,33 @@ SO THAT I can easily access information about my personal and professional conne
 ## Features of the Application
 
 ```
-GIVEN a
-WHEN I
-THEN
+GIVEN a contact management application
+WHEN I register an account
+THEN I am given private access to the application.
+
+WHEN I log into the account
+THEN I am presented with the dashboard where I can access my contacts.
+
+WHEN I fill out the form and click on the Add Contact button,
+THEN I will have stored a new contact.
+
+WHEN I click on the Delete button of a saved contact,
+THEN I will have deleted that contact permanently from my stored contacts.
+
+WHEN I click on the Edit button of a saved contact,
+THEN I will be able to edit that contact's information.
+
+WHEN I click on the Logout button on the navbar,
+THEN I will be logged out of the application and be redirected to the login page.
 ```
 
-## Preview of Github Finder
+## Preview of Contact Fox
 
-![Contact Fox Login Page]()
+![Contact Fox Login Page](assets/images/contactFoxLoginPage.png)
 
-![Contact Fox Register Page]()
+![Contact Fox Register Page](assets/images/contactFoxRegisterPage.png)
 
-![Contact Fox Dashboard]()
+![Contact Fox Dashboard Page](assets/images/contactFoxDashboardPage.png)
 
 ## Links
 
