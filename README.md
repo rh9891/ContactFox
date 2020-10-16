@@ -71,9 +71,16 @@ The application can be initiated by inputting `npm run dev` into the command lin
 Listed below are the frameworks, libraries, and guides that made building this application possible:
 
 - [Context](https://reactjs.org/docs/context.html)
-- []()
+- [Express.js](https://expressjs.com/)
+- [Bcrypt.js](https://github.com/kelektiv/node.bcrypt.js#readme)
+- [JSON Web Tokens](https://jwt.io/introduction)
+- [Mongoose](https://mongoosejs.com/)
+- [Node.js](https://nodejs.org/en/docs/)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
 - [React](https://reactjs.org/docs/getting-started.html)
-- [Traversy Media Tutorials](https://www.traversymedia.com/)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [React Icons](https://react-icons.github.io/react-icons)
+- [Traversy Media Tutorials](https://www.traversymedia.com)
 
 ## License
 
