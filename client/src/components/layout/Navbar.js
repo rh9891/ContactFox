@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import { GiFoxHead } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
+import ContactContext from "../../context/contact/contactContext";
 
 const Navbar = ({ title }) => {
   const authContext = useContext(AuthContext);
+  const contactContext = useContext(ContactContext);
 
   const { isAuthenticated, logout, user, loadUser } = authContext;
+  const { clearContacts } = contactContext;
 
   useEffect(() => {
     loadUser();
@@ -16,6 +19,7 @@ const Navbar = ({ title }) => {
 
   const onLogout = () => {
     logout();
+    clearContacts();
   };
 
   const authLinks = (
