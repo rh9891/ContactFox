@@ -66,8 +66,20 @@ const ContactState = (props) => {
   };
 
   // Function to delete a contact.
-  const deleteContact = (id) => {
-    dispatch({ type: DELETE_CONTACT, payload: id });
+  const deleteContact = async (id) => {
+    try {
+      await axios.delete(`/api/contacts/${id}`);
+
+      dispatch({
+        type: DELETE_CONTACT,
+        payload: id,
+      });
+    } catch (err) {
+      dispatch({
+        type: CONTACT_ERROR,
+        payload: err.response.msg,
+      });
+    }
   };
 
   // Function to clear all contacts from the
