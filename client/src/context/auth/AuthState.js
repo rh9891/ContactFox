@@ -18,7 +18,7 @@ const AuthState = (props) => {
   const initialState = {
     token: localStorage.getItem("token"),
     isAuthenticated: null,
-    loading: false,
+    loading: true,
     user: null,
     error: null,
   };
@@ -28,9 +28,7 @@ const AuthState = (props) => {
   // Function to load user. (Will check to see which user is logged in by hitting the auth endpoint to get the user data.)
   const loadUser = async () => {
     // Loads token into global headers.
-    if (localStorage.token) {
-      setAuthToken(localStorage.token);
-    }
+    setAuthToken(localStorage.token);
 
     try {
       const res = await axios.get("/api/auth");

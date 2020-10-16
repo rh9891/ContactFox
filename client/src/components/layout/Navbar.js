@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import { GiFoxHead } from "react-icons/gi";
 import { Link } from "react-router-dom";
@@ -7,7 +7,12 @@ import AuthContext from "../../context/auth/authContext";
 const Navbar = ({ title }) => {
   const authContext = useContext(AuthContext);
 
-  const { isAuthenticated, logout, user } = authContext;
+  const { isAuthenticated, logout, user, loadUser } = authContext;
+
+  useEffect(() => {
+    loadUser();
+    // eslint-disable-next-line
+  }, []);
 
   const onLogout = () => {
     logout();
