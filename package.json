@@ -1,0 +1,38 @@
+{
+  "name": "ContactFox",
+  "version": "1.0.0",
+  "description": "A MERN-stack application to manage contacts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "clientinstall": "npm install --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rh9891/ContactFox.git"
+  },
+  "keywords": [],
+  "author": "Romie Hecdivert",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rh9891/ContactFox/issues"
+  },
+  "homepage": "https://github.com/rh9891/ContactFox#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.7",
+    "react-icons": "^3.11.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
