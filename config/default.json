@@ -1,4 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://rh9891:dbpassword@contactfox.bp6xf.mongodb.net/contactfox?retryWrites=true&w=majority",
-  "jwtSecret": "its-a-secret"
-}
